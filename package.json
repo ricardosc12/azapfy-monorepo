@@ -3,14 +3,17 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "apps/*",
-    "packages/*"
+    "src/web",
+    "configuration/*",
+    "library/*"
   ],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "web": "pnpm --filter web",
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "prod": "turbo run build & pnpm --filter web start"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

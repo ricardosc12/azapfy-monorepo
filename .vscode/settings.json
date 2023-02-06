@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    "src\\web\\node_modules": true,
+    "src\\web\\.next": true,
+    "src\\web\\.turbo": true,
+    "node_modules": true,
+    "pnpm-workspace.yaml": true,
+    "pnpm-lock.yaml": true,
+    "README.md": true,
+    "src\\web\\.eslintrc.js": true,
+    ".eslintrc.js": true,
+    "src\\web\\README.md": true,
+    "src\\web\\next-env.d.ts": true,
+    "src\\library\\ui\\node_modules": true,
+    "src\\web\\postcss.config.js": true,
+    ".gitignore": true
+  }
+}
