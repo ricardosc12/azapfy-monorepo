@@ -1,12 +1,13 @@
 {
   "extends": "tsconfig/nextjs.json",
-  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx"],
+  "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.js"],
   "exclude": ["node_modules"],
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
-      "@pub/*": ["./public/*"]
+      "@pub/*": ["./public/*"],
+      "@ui/*": ["../library/ui/src/*"]
     }
   }
 }

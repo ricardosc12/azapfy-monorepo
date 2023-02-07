@@ -1,14 +1,28 @@
 {
   "extends": "tsconfig/react-library.json",
   "compilerOptions": {
-    "resolveJsonModule": true
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "isolatedModules": true,
+    "moduleResolution": "node",
+    "preserveWatchOutput": true,
+    "skipLibCheck": true,
+    "noEmit": true,
+    "strict": true,
+    "baseUrl": "./src",
+    "paths": {
+      "@/*": ["./src/*"],
+    }
   },
   "include": [
     "../../web/next-env.d.ts",
     "../types/*.d.ts",
     "../types/next-auth.d.ts",
     "**/*.ts",
-    "**/*.tsx"
+    "**/*.tsx",
+    "**/*.js",
+    "**/*.jsx",
   ],
   "exclude": ["dist", "build", "node_modules"]
 }

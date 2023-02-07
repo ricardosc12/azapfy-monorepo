@@ -29,7 +29,7 @@
     "react-secure-storage": "^1.0.22",
     "sharp": "^0.31.3",
     "swr": "^2.0.3",
-    "ui": "workspace:*",
+    "ui":"workspace:*",
     "zustand": "^4.3.2"
   },
   "devDependencies": {

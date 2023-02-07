@@ -1,4 +1,5 @@
 import { BoltIcon, DevicePhoneMobileIcon, GlobeAltIcon, ScaleIcon } from '@heroicons/react/24/outline'
+import Button from '@ui/atoms/Button'
 
 const features = [
   {
@@ -37,6 +38,7 @@ export default function Info() {
 	return (
 		<div className="bg-white py-24 sm:py-32 lg:py-40">
 		<div className="mx-auto max-w-7xl px-6 lg:px-8">
+			<Button/>
 			<div className="sm:text-center">
 			<motion.div
 			    initial={{ opacity: 0, y: 40 }}
