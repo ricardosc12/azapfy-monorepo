@@ -15,10 +15,10 @@ const store = (set) => ({
 });
 
 const config=()=>persist(immer(store), {
-  name: "token",
-  storage: createJSONStorage(() => secureLocalStorage),
-  merge: (persistedState, currentState) =>
-    mergeDeepLeft(persistedState, currentState)
+	name: "token",
+	storage: createJSONStorage(() => secureLocalStorage),
+	merge: (persistedState, currentState) =>
+		mergeDeepLeft(persistedState, currentState)
 })
 
 const useStore = (isDev||isDebugMod())?create(devtools(config())):create(config());

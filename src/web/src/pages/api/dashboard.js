@@ -56,6 +56,22 @@ export default async function handler(req, res) {
         {title: "Lucro líquido", text: 'Acima do esperado', value:'R$ 10.530.301,67', percent: 90},
         {title: "Taxa de aprovação", text: 'Desempenho satisfatório', value:'89.9%', percent: 89.9}
     ]
+    // return new Response(
+    //     JSON.stringify({
+    //         widgets,
+    //         charts
+    //     }),
+    //     {
+    //         status:200,
+    //         headers: {
+    //             "Access-Control-Allow-Origin:": req.headers.origin,
+    //             'content-type': 'application/json',
+    //         }
+            
+    //     }
+    // )
+    res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
+
     res.status(200).json({
         widgets,
         charts

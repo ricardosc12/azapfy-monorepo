@@ -7,12 +7,13 @@
     "pnpm-workspace.yaml": true,
     "pnpm-lock.yaml": true,
     "README.md": true,
-    "src\\web\\.eslintrc.js": true,
     ".eslintrc.js": true,
     "src\\web\\README.md": true,
     "src\\web\\next-env.d.ts": true,
     "src\\library\\ui\\node_modules": true,
     "src\\web\\postcss.config.js": true,
-    ".gitignore": true
+    ".gitignore": true,
+    "src\\web\\.eslintrc.js": true,
+    "src\\library\\ui\\.turbo": true
   }
 }

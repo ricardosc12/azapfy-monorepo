@@ -1,7 +1,6 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
 import { server } from "@/config"
-import { useEffect } from "react"
 import useSWR from 'swr'
 
 const fetcher = async ([url,data]) => await fetch(url,{
