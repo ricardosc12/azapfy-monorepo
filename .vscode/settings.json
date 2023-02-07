@@ -4,8 +4,6 @@
     "src\\web\\.next": true,
     "src\\web\\.turbo": true,
     "node_modules": true,
-    "pnpm-workspace.yaml": true,
-    "pnpm-lock.yaml": true,
     "README.md": true,
     ".eslintrc.js": true,
     "src\\web\\README.md": true,
