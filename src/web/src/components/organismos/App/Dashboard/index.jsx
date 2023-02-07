@@ -1,32 +1,41 @@
 import Chart from "@/components/molecules/Chart"
 import Widget from "@/components/molecules/Widget"
 import { server } from "@/config"
+import { useMemo, useRef, useState } from "react"
 import useSWR from 'swr'
+import { useMotoristas } from "./hooks/motoristas"
 
-const fetcher = async ([url,data]) => await fetch(url,{
-    method:'POST'
-}).then((res) => res.json())
+function Info({data}){
 
-const useDash = () => {
-    const { data, error, isLoading } = useSWR([`${server}/api/dashboard`], fetcher)
-    return {
-        widgets: data?.widgets,
-        charts: data?.charts
-    }
+    const [state,setState] = useState(false)
+
+    return (
+        <div>
+            <button onClick={()=>setState(!state)}>TESTE</button>
+            <div>
+                {Array.isArray(data?.dados)?data.dados.map((data,index)=>{
+                    return <p key={'mot'+index}>{data.nome}</p>
+                }):''}
+            </div>
+        </div>
+    )
+   
 }
 
 export default function Dash(){
 
-    const { widgets, charts } = useDash()
+    const { data } = useMotoristas()
 
     return (
         <div>
-            <Widget widgets={widgets}/>
+            {/* <Widget widgets={widgets}/>
             <div style={{display:'flex', width:'300px',margin:'auto',justifyContent:'center',alignItems:'center'}}>
                 {charts?.map((chart,id)=>{
                     return <Chart key={id} {...chart}/>
                 })}
-            </div>
+            </div> */}
+
+            <Info data={data}/>
          </div>
     )
 

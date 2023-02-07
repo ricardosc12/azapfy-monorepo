@@ -11,6 +11,7 @@
     ".gitignore": true,
     "src\\web\\.eslintrc.js": true,
     "src\\library\\ui\\.turbo": true,
-    "pnpm-lock.yaml": true
+    "pnpm-lock.yaml": true,
+    "src\\web\\node_modules": true
   }
 }
