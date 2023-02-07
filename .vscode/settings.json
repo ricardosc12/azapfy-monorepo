@@ -12,6 +12,8 @@
     "src\\web\\postcss.config.js": true,
     ".gitignore": true,
     "src\\web\\.eslintrc.js": true,
-    "src\\library\\ui\\.turbo": true
+    "src\\library\\ui\\.turbo": true,
+    "pnpm-lock.yaml": true,
+    "pnpm-workspace.yaml": true
   }
 }

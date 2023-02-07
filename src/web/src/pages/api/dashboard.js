@@ -70,8 +70,12 @@ export default async function handler(req, res) {
             
     //     }
     // )
-    res.setHeader('Access-Control-Allow-Origin', req.headers.origin)
-
+    res.setHeader('Access-Control-Allow-Origin', "*")
+    res.setHeader("Access-Control-Allow-Methods", "PUT, POST, PATCH, DELETE, GET");
+    res.setHeader(
+        "Access-Control-Allow-Headers",
+        "Origin, X-Requested-With, Content-Type, Accept, Authorization"
+      );
     res.status(200).json({
         widgets,
         charts
