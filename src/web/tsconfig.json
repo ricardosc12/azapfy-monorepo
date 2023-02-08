@@ -2,6 +2,7 @@
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.js"],
   "exclude": ["node_modules"],
+  "allowJs":true,
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {

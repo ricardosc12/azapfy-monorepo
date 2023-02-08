@@ -1,30 +1,36 @@
-import Chart from "@/components/molecules/Chart"
-import Widget from "@/components/molecules/Widget"
-import { server } from "@/config"
-import { useMemo, useRef, useState } from "react"
-import useSWR from 'swr'
-import { useMotoristas } from "./hooks/motoristas"
+import { memo,useState } from "react"
+import useStore from "@/storage"
+import { useMotoristas } from "@/components/hooks/motoristas"
+import { useUsuarios } from "@/components/hooks/usuarios"
 
-function Info({data}){
+export const InfoMot = memo(function InfoMot({dados,load}){
 
-    const [state,setState] = useState(false)
+    if(load) {
+        return [...Array(10)].map((_,index)=>{
+            return <p key={'moto'+index}>Carregando ...</p>
+        })
+    }
 
     return (
         <div>
-            <button onClick={()=>setState(!state)}>TESTE</button>
             <div>
-                {Array.isArray(data?.dados)?data.dados.map((data,index)=>{
-                    return <p key={'mot'+index}>{data.nome}</p>
+                {Array.isArray(dados)?dados.slice(-10).map((data,index)=>{
+                    return <p key={'mot'+index}>{data.label}</p>
                 }):''}
             </div>
         </div>
     )
    
-}
+})
 
 export default function Dash(){
 
-    const { data } = useMotoristas()
+
+    const { data: motoristas, error, isLoading } = useMotoristas()
+
+    const { data: usuarios } = useUsuarios()
+
+    const auth = useStore(state=>state.auth)
 
     return (
         <div>
@@ -34,8 +40,9 @@ export default function Dash(){
                     return <Chart key={id} {...chart}/>
                 })}
             </div> */}
-
-            <Info data={data}/>
+            <button onClick={()=>auth.update()}>Auth</button>
+            {/* <button onClick={()=>setState(!state)}>TESTE {JSON.stringify()}</button> */}
+            <InfoMot dados={motoristas} load={isLoading}/>
          </div>
     )
 

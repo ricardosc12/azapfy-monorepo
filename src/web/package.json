@@ -10,11 +10,6 @@
     "prod": "next build & next start"
   },
   "dependencies": {
-    "@coreui/coreui": "^4.2.6",
-    "@coreui/icons": "^3.0.0",
-    "@coreui/icons-react": "^2.1.0",
-    "@coreui/react": "^4.5.2",
-    "@coreui/react-chartjs": "^2.1.2",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.14",
     "apisauce": "^2.1.6",
@@ -26,10 +21,11 @@
     "ramda": "^0.28.0",
     "react": "18.2.0",
     "react-dom": "18.2.0",
+    "react-query": "^3.39.3",
     "react-secure-storage": "^1.0.22",
     "sharp": "^0.31.3",
     "swr": "^2.0.3",
-    "ui":"workspace:*",
+    "ui": "workspace:*",
     "zustand": "^4.3.2"
   },
   "devDependencies": {

@@ -30,15 +30,20 @@ const features = [
 
 import useStore from '@/storage'
 import { motion } from 'framer-motion'
+import { useMotoristas } from '@/components/hooks/motoristas'
+import { InfoMot } from '../Dashboard'
 
 export default function Info() {
 
   	const { auth } = useStore(state=>state)
 
+	const { data } = useMotoristas()
+
 	return (
 		<div className="bg-white py-24 sm:py-32 lg:py-40">
 		<div className="mx-auto max-w-7xl px-6 lg:px-8">
 			<Button/>
+			<InfoMot dados={data}/>
 			<div className="sm:text-center">
 			<motion.div
 			    initial={{ opacity: 0, y: 40 }}

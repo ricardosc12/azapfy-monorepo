@@ -32,8 +32,7 @@ export function getGroup(auth) {
 }
 
 export function getBases(auth, { active = false, name = false } = {}) {
-    return auth.bases
-        .filter((base) => (active === true ? base.active : true))
+    return auth.bases?.filter((base) => (active === true ? base.active : true))
         .map((base) => (name === true ? base.name : base));
 }
 

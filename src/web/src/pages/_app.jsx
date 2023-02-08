@@ -1,10 +1,13 @@
 import '@/styles/globals.css'
-import '@coreui/coreui/dist/css/coreui.min.css'
 import Layout from '@/components/layouts/layout'
 import Head from 'next/head'
+import { QueryClient, QueryClientProvider } from 'react-query'
+import { useRef, useState } from 'react'
 
 
 export default function App({ Component, pageProps }) {  
+
+	const [queryClient] = useState(()=>new QueryClient())
 
 	return (
 		<>
@@ -19,9 +22,11 @@ export default function App({ Component, pageProps }) {
 			</Head>
 			{Component.nav===true?
 			(	
-				<Layout>
-					<Component {...pageProps} />
-				</Layout>
+				<QueryClientProvider client={queryClient}>
+					<Layout>
+						<Component {...pageProps} />
+					</Layout>
+				</QueryClientProvider>
 			):<Component {...pageProps} />}
 			
 		</>

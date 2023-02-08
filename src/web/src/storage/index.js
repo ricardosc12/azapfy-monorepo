@@ -16,7 +16,7 @@ const store = (set) => ({
 
 const config=()=>persist(immer(store), {
 	name: "token",
-	storage: createJSONStorage(() => secureLocalStorage),
+	storage: createJSONStorage(() => localStorage),
 	merge: (persistedState, currentState) =>
 		mergeDeepLeft(persistedState, currentState)
 })
