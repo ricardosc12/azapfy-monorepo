@@ -3,6 +3,10 @@ export const routes = {
         name:'dashboard',
         title: 'Dashboard'
     },
+    '/app/dashboard/create':{
+        name:'dashboard',
+        title: 'Dashboard Create'
+    },
     '/app/info':{
         name:'rota',
         title: 'Info'

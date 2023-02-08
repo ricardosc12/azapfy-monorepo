@@ -1,7 +1,8 @@
-import { memo,useState } from "react"
+import { memo } from "react"
 import useStore from "@/storage"
 import { useMotoristas } from "@/components/hooks/motoristas"
 import { useUsuarios } from "@/components/hooks/usuarios"
+import { useDashStore } from "../storage"
 
 export const InfoMot = memo(function InfoMot({dados,load}){
 
@@ -25,23 +26,18 @@ export const InfoMot = memo(function InfoMot({dados,load}){
 
 export default function Dash(){
 
-
     const { data: motoristas, error, isLoading } = useMotoristas()
 
     const { data: usuarios } = useUsuarios()
+
+    const {dados:{main:{nome,idade}}} = useDashStore()
 
     const auth = useStore(state=>state.auth)
 
     return (
         <div>
-            {/* <Widget widgets={widgets}/>
-            <div style={{display:'flex', width:'300px',margin:'auto',justifyContent:'center',alignItems:'center'}}>
-                {charts?.map((chart,id)=>{
-                    return <Chart key={id} {...chart}/>
-                })}
-            </div> */}
             <button onClick={()=>auth.update()}>Auth</button>
-            {/* <button onClick={()=>setState(!state)}>TESTE {JSON.stringify()}</button> */}
+            <div><p><b>{`${nome} ${idade}`}</b></p></div>
             <InfoMot dados={motoristas} load={isLoading}/>
          </div>
     )

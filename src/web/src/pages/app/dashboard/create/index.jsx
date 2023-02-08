@@ -2,7 +2,7 @@ import { Suspense } from 'react';
 import dynamic from 'next/dynamic';
 import Framer from '@/components/layouts/Framer';
 
-const Dashboard =  dynamic(() => import('@/components/organismos/App/Dashboard/Main'), {
+const Dashboard =  dynamic(() => import('@/components/organismos/App/Dashboard/Create'), {
     suspense: true,
 });
 

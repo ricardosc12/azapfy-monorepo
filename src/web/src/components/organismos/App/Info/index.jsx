@@ -31,7 +31,7 @@ const features = [
 import useStore from '@/storage'
 import { motion } from 'framer-motion'
 import { useMotoristas } from '@/components/hooks/motoristas'
-import { InfoMot } from '../Dashboard'
+import { InfoMot } from '../Dashboard/Main'
 
 export default function Info() {
 
