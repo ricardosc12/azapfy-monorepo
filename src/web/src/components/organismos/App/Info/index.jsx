@@ -36,7 +36,7 @@ export default function Info() {
 
   	const { auth } = useStore(state=>state)
 
-	const { data } = useMotoristas({mapResult:true})
+	const { data } = useMotoristas({mapResult:false})
 
 	return (
 		<div className="bg-white py-24 sm:py-32 lg:py-40">

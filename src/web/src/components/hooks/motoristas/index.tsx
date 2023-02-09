@@ -4,6 +4,7 @@ import { getBases } from "@/utils/auth"
 import useStore from "@/storage"
 import { useQuery } from "react-query"
 import { useQueryClient } from 'react-query'
+import { useRef } from "react"
 
 
 interface Motorista {
@@ -32,16 +33,18 @@ const mapFunction=(mapResult?:Function | Boolean, data?:any)=>{
     data
 }
 
-const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasProps)=>{
+const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasProps={})=>{
 
     const auth:any = useStore(state=>state.auth)
+
+    const queryKeys = useRef(['motoristas',auth.bases, auth.grupo_ativo, mapResult]).current
 
     if(storage) {
         // eslint-disable-next-line react-hooks/rules-of-hooks
         var queryClient = useQueryClient()
     }
 
-    const query = useQuery(['motoristas',auth.bases, auth.grupo_ativo], 
+    const query = useQuery(queryKeys, 
         async ()=> {
 
             const requestData = {
@@ -52,9 +55,9 @@ const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasPr
             }
 
             if(storage) {
-                const data:any = queryClient.getQueryData(['motoristas',auth.bases, auth.grupo_ativo])
-                if(data && data.status===true){
-                    storage(mapFunction(mapResult,data.dados))
+                const data:any = queryClient.getQueryData(queryKeys)
+                if(data){
+                    storage(data)
                 }
             }
         
