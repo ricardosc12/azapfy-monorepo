@@ -1,5 +1,8 @@
+import { useEffect } from 'react';
 import { create } from 'zustand'
 import { immer } from "zustand/middleware/immer";
+import { useMotoristas } from "@/components/hooks/motoristas"
+import { motoristaStoragePros } from "@/components/hooks/motoristas"
 
 export const useDashStore = create(immer(set=>({
     dados:{
@@ -23,3 +26,7 @@ export const useDashStore = create(immer(set=>({
         })
     }
 })))
+
+export const createDashStore=(setMotoristas)=>{
+    useMotoristas(motoristaStoragePros(setMotoristas))
+}

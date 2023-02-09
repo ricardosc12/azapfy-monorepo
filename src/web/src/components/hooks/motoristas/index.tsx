@@ -34,38 +34,42 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
         var queryClient = useQueryClient()
     }
 
-    const query = useQuery(['motoristas',auth.bases, auth.grupo_ativo], async ()=> {
 
-        const requestData = {
-            grupo_emp: auth.grupo_ativo,
-            bases: getBases(auth, { active: true, name: true }),
-            timezone: timezone(),
-            ...request
-        }
 
-        if(storage) {
-            const data:any = queryClient.getQueryData(['motoristas',auth.bases, auth.grupo_ativo])
-            if(data){
-                storage(data.dados)
+    const query = useQuery(['motoristas',auth.bases, auth.grupo_ativo], 
+        async ()=> {
+
+            const requestData = {
+                grupo_emp: auth.grupo_ativo,
+                bases: getBases(auth, { active: true, name: true }),
+                timezone: timezone(),
+                ...request
             }
-        }
-       
-        const res = await getMotoristas(requestData)
 
-        if(res.status !== 200 || !res.data?.status===true) {
-            throw res.data?.mensagem || "Erro ao buscar motoristas !"
-        }
+            if(storage) {
+                const data:any = queryClient.getQueryData(['motoristas',auth.bases, auth.grupo_ativo])
+                if(data && data.status===true){
+                    storage(data.dados)
+                }
+            }
+        
+            const res = await getMotoristas(requestData)
 
-        if(!Array.isArray(res.data.dados)) {
-            throw "Erro interno ao obter motoristas !"
-        }
+            if(res.status !== 200 || !res.data?.status===true) {
+                throw res.data?.mensagem || "Erro ao buscar motoristas !"
+            }
 
-        return map===true?
-            mapMotoristas(res.data.dados):
-            typeof map === 'function'?map(res.data.dados):
-            res.data
+            if(!Array.isArray(res.data.dados)) {
+                throw "Erro interno ao obter motoristas !"
+            }
 
-    },{
+            return map===true?
+                mapMotoristas(res.data.dados):
+                typeof map === 'function'?map(res.data.dados):
+                res.data
+
+        },
+    {
         refetchOnWindowFocus:false,
         keepPreviousData:true,
         retry:false,
@@ -76,6 +80,17 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
 
 }
 
+const motoristaStoragePros=(dispatch:Function)=>{
+    return {
+        queryProps:{
+            notifyOnChangeProps:[],
+            onSuccess:(data:any)=>{
+                dispatch(data.dados)
+            }
+        },
+        storage:dispatch
+    }
+}
 
 
-export { useMotoristas }
+export { useMotoristas, motoristaStoragePros }
