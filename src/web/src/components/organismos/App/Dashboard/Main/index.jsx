@@ -1,9 +1,6 @@
-import { memo, useState } from "react"
-import useStore from "@/storage"
-import { useUsuarios } from "@/components/hooks/usuarios"
+import { memo } from "react"
 import { useDashStore } from "../storage"
 import { useCreateDashStore } from "../storage"
-import { useMotoristas } from "@/components/hooks/motoristas"
 
 export const InfoMot = memo(function InfoMot({dados,load}){
 
@@ -17,7 +14,7 @@ export const InfoMot = memo(function InfoMot({dados,load}){
         <div>
             <div>
                 {Array.isArray(dados)?dados.slice(-10).map((data,index)=>{
-                    return <p key={'mot'+index}>{data.nome}</p>
+                    return <p key={'mot'+index}>{data.label}</p>
                 }):''}
             </div>
         </div>
@@ -27,11 +24,11 @@ export const InfoMot = memo(function InfoMot({dados,load}){
 
 export default function Dash(){
 
+    const { dispatch } = useDashStore(state=>state.change)
+
     const { motoristas } = useDashStore(state=>state.dados.main)
 
-    const { setMotoristas } = useDashStore(state=>state.dispatch)
-
-    useCreateDashStore(setMotoristas)
+    useCreateDashStore(dispatch)
 
     return (
         <div>

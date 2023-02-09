@@ -19,13 +19,20 @@ const mapMotoristas=(data:Array<Motorista>)=>{
 }
 
 interface UseMotoristasProps {
-    map?: Function | Boolean,
+    mapResult?: Function | Boolean,
     request?: any,
     queryProps?: {},
     storage?: Function
 }
 
-const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map: true})=>{
+const mapFunction=(mapResult?:Function | Boolean, data?:any)=>{
+    return mapResult===true?
+    mapMotoristas(data.dados):
+    typeof mapResult === 'function'?mapResult(data.dados):
+    data
+}
+
+const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasProps)=>{
 
     const auth:any = useStore(state=>state.auth)
 
@@ -33,8 +40,6 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
         // eslint-disable-next-line react-hooks/rules-of-hooks
         var queryClient = useQueryClient()
     }
-
-
 
     const query = useQuery(['motoristas',auth.bases, auth.grupo_ativo], 
         async ()=> {
@@ -49,7 +54,7 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
             if(storage) {
                 const data:any = queryClient.getQueryData(['motoristas',auth.bases, auth.grupo_ativo])
                 if(data && data.status===true){
-                    storage(data.dados)
+                    storage(mapFunction(mapResult,data.dados))
                 }
             }
         
@@ -62,12 +67,7 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
             if(!Array.isArray(res.data.dados)) {
                 throw "Erro interno ao obter motoristas !"
             }
-
-            return map===true?
-                mapMotoristas(res.data.dados):
-                typeof map === 'function'?map(res.data.dados):
-                res.data
-
+            return mapFunction(mapResult,res.data)
         },
     {
         refetchOnWindowFocus:false,
@@ -85,7 +85,7 @@ const motoristaStoragePros=(dispatch:Function)=>{
         queryProps:{
             notifyOnChangeProps:[],
             onSuccess:(data:any)=>{
-                dispatch(data.dados)
+                dispatch(data)
             }
         },
         storage:dispatch
