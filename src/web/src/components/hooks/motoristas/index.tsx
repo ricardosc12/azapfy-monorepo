@@ -30,6 +30,7 @@ const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map:
     const auth:any = useStore(state=>state.auth)
 
     if(storage) {
+        // eslint-disable-next-line react-hooks/rules-of-hooks
         var queryClient = useQueryClient()
     }
 
