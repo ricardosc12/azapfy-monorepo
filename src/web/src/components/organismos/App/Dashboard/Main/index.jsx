@@ -2,7 +2,7 @@ import { memo, useState } from "react"
 import useStore from "@/storage"
 import { useUsuarios } from "@/components/hooks/usuarios"
 import { useDashStore } from "../storage"
-import { createDashStore } from "../storage"
+import { useCreateDashStore } from "../storage"
 import { useMotoristas } from "@/components/hooks/motoristas"
 
 export const InfoMot = memo(function InfoMot({dados,load}){
@@ -31,7 +31,7 @@ export default function Dash(){
 
     const { setMotoristas } = useDashStore(state=>state.dispatch)
 
-    createDashStore(setMotoristas)
+    useCreateDashStore(setMotoristas)
 
     return (
         <div>

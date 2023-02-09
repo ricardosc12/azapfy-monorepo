@@ -27,6 +27,6 @@ export const useDashStore = create(immer(set=>({
     }
 })))
 
-export const createDashStore=(setMotoristas)=>{
+export const useCreateDashStore=(setMotoristas)=>{
     useMotoristas(motoristaStoragePros(setMotoristas))
 }
