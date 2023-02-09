@@ -3,6 +3,8 @@ import timezone from "@/utils/timezone"
 import { getBases } from "@/utils/auth"
 import useStore from "@/storage"
 import { useQuery } from "react-query"
+import { useQueryClient } from 'react-query'
+
 
 interface Motorista {
     nome:string,
@@ -18,20 +20,35 @@ const mapMotoristas=(data:Array<Motorista>)=>{
 
 interface UseMotoristasProps {
     map?: Function | Boolean,
-    request?: any
+    request?: any,
+    queryProps?: {},
+    storage?: Function
 }
 
-const useMotoristas=({map,request}:UseMotoristasProps = {map: true})=>{
+const useMotoristas=({map,request,queryProps,storage}:UseMotoristasProps = {map: true})=>{
 
     const auth:any = useStore(state=>state.auth)
 
+    if(storage) {
+        var queryClient = useQueryClient()
+    }
+
     const query = useQuery(['motoristas',auth.bases, auth.grupo_ativo], async ()=> {
+
         const requestData = {
             grupo_emp: auth.grupo_ativo,
             bases: getBases(auth, { active: true, name: true }),
             timezone: timezone(),
             ...request
         }
+
+        if(storage) {
+            const data:any = queryClient.getQueryData(['motoristas',auth.bases, auth.grupo_ativo])
+            if(data){
+                storage(data.dados)
+            }
+        }
+       
         const res = await getMotoristas(requestData)
 
         if(res.status !== 200 || !res.data?.status===true) {
@@ -41,14 +58,17 @@ const useMotoristas=({map,request}:UseMotoristasProps = {map: true})=>{
         if(!Array.isArray(res.data.dados)) {
             throw "Erro interno ao obter motoristas !"
         }
+
         return map===true?
             mapMotoristas(res.data.dados):
             typeof map === 'function'?map(res.data.dados):
             res.data
+
     },{
         refetchOnWindowFocus:false,
         keepPreviousData:true,
-        retry:false
+        retry:false,
+        ...queryProps
     })
 
     return query

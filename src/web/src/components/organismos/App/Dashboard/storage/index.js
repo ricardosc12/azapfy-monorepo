@@ -4,8 +4,7 @@ import { immer } from "zustand/middleware/immer";
 export const useDashStore = create(immer(set=>({
     dados:{
         main:{
-            nome:"Ricardo",
-            idade:123
+            motoristas:[]
         },
         create:{
             nome:"Ricardo",
@@ -18,6 +17,9 @@ export const useDashStore = create(immer(set=>({
         }),
         setNome:(payload)=>set(state=>{
             state.dados.main.nome = payload
+        }),
+        setMotoristas:(payload)=>set(state=>{
+            state.dados.main.motoristas = payload
         })
     }
 })))

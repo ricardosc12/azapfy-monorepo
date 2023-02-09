@@ -16,7 +16,7 @@ export const InfoMot = memo(function InfoMot({dados,load}){
         <div>
             <div>
                 {Array.isArray(dados)?dados.slice(-10).map((data,index)=>{
-                    return <p key={'mot'+index}>{data.label}</p>
+                    return <p key={'mot'+index}>{data.nome}</p>
                 }):''}
             </div>
         </div>
@@ -26,19 +26,24 @@ export const InfoMot = memo(function InfoMot({dados,load}){
 
 export default function Dash(){
 
-    const { data: motoristas, error, isLoading } = useMotoristas()
+    const { motoristas } = useDashStore(state=>state.dados.main)
+    const { setMotoristas } = useDashStore(state=>state.dispatch)
 
-    const { data: usuarios } = useUsuarios()
-
-    const {dados:{main:{nome,idade}}} = useDashStore()
-
-    const auth = useStore(state=>state.auth)
+    useMotoristas({
+        queryProps:{
+            notifyOnChangeProps:[],
+            onSuccess:(data)=>{
+                setMotoristas(data.dados)
+            }
+        },
+        storage:setMotoristas
+    })
 
     return (
         <div>
-            <button onClick={()=>auth.update()}>Auth</button>
-            <div><p><b>{`${nome} ${idade}`}</b></p></div>
-            <InfoMot dados={motoristas} load={isLoading}/>
+            {/* <button onClick={()=>auth.update()}>Auth</button> */}
+            {/* <div><p><b>{`${nome} ${idade}`}</b></p></div> */}
+            <InfoMot dados={motoristas} load={!motoristas || !motoristas.length}/>
          </div>
     )
 
