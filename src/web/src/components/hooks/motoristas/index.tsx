@@ -2,8 +2,7 @@ import { getMotoristas } from "@/api/Relacao"
 import timezone from "@/utils/timezone"
 import { getBases } from "@/utils/auth"
 import useStore from "@/storage"
-import { useQuery } from "react-query"
-import { useQueryClient } from 'react-query'
+import { useQuery, useQueryClient } from "react-query"
 import { useRef } from "react"
 
 
@@ -47,6 +46,13 @@ const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasPr
     const query = useQuery(queryKeys, 
         async ()=> {
 
+            if(storage) {
+                const data:any = queryClient.getQueryData(queryKeys)
+                if(data){
+                    storage(data)
+                }
+            }
+
             const requestData = {
                 grupo_emp: auth.grupo_ativo,
                 bases: getBases(auth, { active: true, name: true }),
@@ -54,12 +60,7 @@ const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasPr
                 ...request
             }
 
-            if(storage) {
-                const data:any = queryClient.getQueryData(queryKeys)
-                if(data){
-                    storage(data)
-                }
-            }
+
         
             const res = await getMotoristas(requestData)
 
@@ -76,6 +77,7 @@ const useMotoristas=({mapResult=true,request,queryProps,storage}:UseMotoristasPr
         refetchOnWindowFocus:false,
         keepPreviousData:true,
         retry:false,
+        notifyOnChangeProps:['data','error'],
         ...queryProps
     })
 

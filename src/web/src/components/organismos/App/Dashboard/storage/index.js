@@ -1,12 +1,13 @@
 import { create } from 'zustand'
 import { immer } from "zustand/middleware/immer";
-import { useMotoristas } from "@/components/hooks/motoristas"
-import { motoristaStoragePros } from "@/components/hooks/motoristas"
+import { useMotoristas, motoristaStoragePros } from "@/components/hooks/motoristas"
+import { useUsuarios, usuariosStoragePros } from '@/components/hooks/usuarios';
 
 export const useDashStore = create(immer(set=>({
     dados:{
         main:{
-            motoristas:[]
+            motoristas:[],
+            usuarios:[]
         },
         create:{
             nome:"Ricardo",
@@ -23,6 +24,9 @@ export const useDashStore = create(immer(set=>({
             }),
             setMotoristas:(payload)=>set(state=>{
                 state.dados.main.motoristas = payload
+            }),
+            setUsuarios:(payload)=>set(state=>{
+                state.dados.main.usuarios = payload
             })
         }
     }
@@ -30,4 +34,5 @@ export const useDashStore = create(immer(set=>({
 
 export const useCreateDashStore=(dispatch)=>{
     useMotoristas(motoristaStoragePros(dispatch.setMotoristas))
+    useUsuarios(usuariosStoragePros(dispatch.setUsuarios))
 }

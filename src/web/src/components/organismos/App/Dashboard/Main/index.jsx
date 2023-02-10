@@ -26,7 +26,7 @@ export default function Dash(){
 
     const { dispatch } = useDashStore(state=>state.change)
 
-    const { motoristas } = useDashStore(state=>state.dados.main)
+    const { motoristas, usuarios } = useDashStore(state=>state.dados.main)
 
     useCreateDashStore(dispatch)
 
