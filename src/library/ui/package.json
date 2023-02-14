@@ -5,9 +5,13 @@
   "types": "./src/index.tsx",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint **/*.tsx"
+    "lint": "eslint **/*.tsx **/*.ts"
   },
   "devDependencies": {
+    "@emotion/react": "latest",
+    "@emotion/styled": "latest",
+    "@mui/material": "^5.11.8",
+    "@stitches/react": "^1.2.8",
     "@types/react": "^18.0.17",
     "@types/react-dom": "^18.0.6",
     "eslint": "^7.32.0",

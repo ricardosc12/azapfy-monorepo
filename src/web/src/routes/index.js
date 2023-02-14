@@ -23,4 +23,8 @@ export const routes = {
         name:'',
         title: 'Login'
     },
+    '/app/modal':{
+        title: 'Modal',
+        name:'azp'
+    }
 }

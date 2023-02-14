@@ -2,13 +2,18 @@
   "extends": "tsconfig/nextjs.json",
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", "**/*.jsx", "**/*.js"],
   "exclude": ["node_modules"],
-  "allowJs":true,
+
   "compilerOptions": {
     "baseUrl": ".",
     "paths": {
       "@/*": ["./src/*"],
       "@pub/*": ["./public/*"],
       "@ui/*": ["../library/ui/src/*"]
-    }
+    },
+    "jsx": "preserve",
+    "jsxImportSource": "@emotion/react",
+    "allowJs":true,
+    "lib": ["dom", "dom.iterable", "esnext"],
+    "incremental": true
   }
 }
