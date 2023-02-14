@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import { getCssText } from '@ui/theme/stitches.config'
 import { createEmotionCache } from '@/styles/createMuiCache';
 import createEmotionServer from '@emotion/server/create-instance';
 
@@ -10,7 +9,6 @@ export default function MyDocument({emotionStyleTags}) {
       <Head>
         <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
-        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
       </Head>
       <body className='h-full'>
         <Main />

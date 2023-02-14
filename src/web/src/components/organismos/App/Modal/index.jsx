@@ -5,23 +5,27 @@ import useModalWithoutAsync from "./components/modais/withoutasync"
 import useModalProps from "./components/modais/withprops"
 import useModalPropsOpen from "./components/modais/withpropsonopen"
 import Button from "@ui/atoms/Button"
+import { useState } from 'react'
 
 const Main = styled.div`
+    cursor: pointer;
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    background: rgba(10,0,0,.1);
+    background: ${props=>props.back?'rgba(10,0,0,.1)':'rgba(0,100,0,.5)'};
     height:300px;
-    & button {
+    /* & button {
         background-color:rgba(150,150,20,.5);
         margin:5px;
         padding:5px 12px;
         border-radius:5px;
-    }
+    } */
 `
 
 export default function Modal(){
+
+    const [state, setState] = useState(false)
 
     const modalDelete = useModalDelete()
 
@@ -61,8 +65,8 @@ export default function Modal(){
     }
 
     return (
-        <Main>
-            <div>MODAIS</div>
+        <Main back={state}>
+            <div onClick={()=>setState(!state)}>MODAIS</div>
             <button onClick={handleDelete}>PADRÃO</button>
             <button onClick={handleOpen}>WITH PROPS</button>
             <button onClick={handleOnOpen}>WITH PROPS ON OPEN</button>

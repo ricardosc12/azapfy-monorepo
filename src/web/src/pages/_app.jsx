@@ -2,9 +2,11 @@ import '@/styles/globals.css'
 import Layout from '@/components/layouts/layout'
 import Head from 'next/head'
 import { QueryClient, QueryClientProvider } from 'react-query'
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { CacheProvider } from "@emotion/react";
 import { createEmotionCache } from '@/styles/createMuiCache'
+import { CssBaseline, theme } from '@ui/index'
+import { ThemeProvider } from '@mui/material/styles';
 
 const clientSideEmotionCache = createEmotionCache();
 
@@ -30,6 +32,8 @@ export default function App(
 						content="Web site created using NextJS"
 					/>
 				</Head>
+				<ThemeProvider theme={theme}>
+				<CssBaseline/>
 				{Component.nav===true?
 				(	
 					<QueryClientProvider client={queryClient}>
@@ -40,6 +44,7 @@ export default function App(
 						
 					</QueryClientProvider>
 				):<Component {...pageProps} />}
+				</ThemeProvider>
 			</CacheProvider>
 		</>
 		
