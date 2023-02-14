@@ -1,23 +1,25 @@
-import { styled } from "@stitches/react"
+import styled from '@emotion/styled'
 import useModalKeep from "./components/modais/keepmounted"
 import useModalDelete from "./components/modais/padrao"
 import useModalWithoutAsync from "./components/modais/withoutasync"
 import useModalProps from "./components/modais/withprops"
 import useModalPropsOpen from "./components/modais/withpropsonopen"
+import Button from "@ui/atoms/Button"
 
-const Main=styled('div',{
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    flexDirection:'column',
-    height:'300px',
-    '& button': {
-        backgroundColor:'rgba(150,150,20,.5)',
-        margin:'5px',
-        padding:'5px 12px',
-        borderRadius:'5px'
+const Main = styled.div`
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background: rgba(10,0,0,.1);
+    height:300px;
+    & button {
+        background-color:rgba(150,150,20,.5);
+        margin:5px;
+        padding:5px 12px;
+        border-radius:5px;
     }
-})
+`
 
 export default function Modal(){
 
@@ -66,6 +68,7 @@ export default function Modal(){
             <button onClick={handleOnOpen}>WITH PROPS ON OPEN</button>
             <button onClick={handleOpenSync}>WITHOUT OPEN ASYNC</button>
             <button onClick={handleKeep}>KEEP MOUNTED</button>
+            <Button/>
         </Main>
     )
 }

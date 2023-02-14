@@ -3,14 +3,14 @@ import { getCssText } from '@ui/theme/stitches.config'
 import { createEmotionCache } from '@/styles/createMuiCache';
 import createEmotionServer from '@emotion/server/create-instance';
 
-
 export default function MyDocument({emotionStyleTags}) {
+  
   return (
     <Html lang="en" className='h-full bg-gray-50'>
       <Head>
-        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
         <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
+        <style id="stitches" dangerouslySetInnerHTML={{ __html: getCssText() }} />
       </Head>
       <body className='h-full'>
         <Main />
@@ -21,7 +21,6 @@ export default function MyDocument({emotionStyleTags}) {
 }
 
 MyDocument.getInitialProps = async (ctx) => {
-
 
   const originalRenderPage = ctx.renderPage;
 

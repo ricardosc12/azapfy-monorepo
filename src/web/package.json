@@ -13,6 +13,7 @@
     "@emotion/cache": "latest",
     "@emotion/react": "latest",
     "@emotion/server": "latest",
+    "@emotion/styled": "latest",
     "@headlessui/react": "^1.7.10",
     "@heroicons/react": "^2.0.14",
     "@stitches/react": "^1.2.8",
