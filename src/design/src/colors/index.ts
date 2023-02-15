@@ -10,6 +10,10 @@ const COLORS:any = {
         contrastText:"rgb(255,255,200)",
         light:"rgba(0,255,0)",
         dark:"rgb(0,90,0)"
+    },
+    roxinho:{
+        main:"#DFD3E3",
+        contrastText:"#5E2572",
     }
 }
 

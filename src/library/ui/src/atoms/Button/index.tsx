@@ -1,25 +1,19 @@
 import styled from '@emotion/styled'
-import { Button as ButtonMUI } from "@mui/material"
+import { Button as ButtonMui, ButtonProps } from "@mui/material"
 import { Checkbox } from '@mui/material'
 
-const Bt = styled(ButtonMUI)`
-    /* background-color: blue; */
-    &.MuiButton-root {
-        box-shadow: none;
-        border-radius: 30px;
-    }
-    /* color: white; */
-`
+// const Bt = styled(ButtonMUI)`
+//     &.MuiButton-root {
+//         box-shadow: none;
+//         border-radius: 30px;
+//     }
+// `
 
-export default function Button() {
+export default function Button({children,...props}:ButtonProps) {
 
     return (
-        <>
-            <Bt color="primary" variant="contained">
-                CONFIRMAR
-            </Bt>
-            <Checkbox color="neutral" defaultChecked/>
-        </>
-
+        <ButtonMui disableElevation color="primary" variant="contained" {...props}>
+            {children}
+        </ButtonMui>
     )
 }   

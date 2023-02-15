@@ -12,7 +12,8 @@ const Main = styled.div`
 export default function Componentes(){
     return (
         <Main>
-            <Button/>
+            <Button color="roxinho">ROXINHO</Button>
+            <Button>LARANJA</Button>
         </Main>
     )
 }

@@ -23,6 +23,14 @@ const theme = createTheme({
                     backgroundColor: '#FF944D',
                   }
                 }),
+                ...(ownerState.variant === 'contained' &&
+                ownerState.color === 'roxinho' && {
+                  ":hover": {
+                    backgroundColor: '#e8e0eb',
+                  }
+                }),
+                boxShadow: 'none',
+                borderRadius:'30px',
             }),
           },
         },
