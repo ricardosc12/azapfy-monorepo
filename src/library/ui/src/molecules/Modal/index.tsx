@@ -6,7 +6,7 @@ const DialogStyled = styled(Dialog)<DialogProps>(({}) => ({
 
 }))
 
-const Modal = forwardRef(({initial,childRef=false,...props}:any,ref)=>{
+const Modal = forwardRef(function Modal({initial,childRef=false,...props}:any,ref){
 
     const [open, setOpen] = useState(initial)
 

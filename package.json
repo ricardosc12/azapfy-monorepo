@@ -3,9 +3,10 @@
   "version": "0.0.0",
   "private": true,
   "workspaces": [
-    "src/web",
-    "configuration/*",
-    "src/library/*"
+    "src/web/**",
+    "configuration/**",
+    "src/library/**",
+    "src/design/**"
   ],
   "scripts": {
     "build": "turbo run build",

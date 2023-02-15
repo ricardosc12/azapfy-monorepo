@@ -1,4 +1,6 @@
 {
+  "javascript.preferences.importModuleSpecifier": "non-relative",
+  "typescript.preferences.importModuleSpecifier": "non-relative",
   "files.exclude": {
     "src\\web\\.next": true,
     "src\\web\\.turbo": true,
@@ -6,12 +8,13 @@
     "README.md": true,
     "src\\web\\README.md": true,
     "src\\web\\next-env.d.ts": true,
-    "src\\library\\ui\\node_modules": true,
     "src\\web\\postcss.config.js": true,
     ".gitignore": true,
     "src\\web\\.eslintrc.js": true,
     "src\\library\\ui\\.turbo": true,
     "pnpm-lock.yaml": true,
-    "src\\web\\node_modules": true
+    "src\\web\\node_modules": true,
+    "src\\design\\node_modules\\.bin": true,
+    "src\\design\\node_modules": true
   }
 }

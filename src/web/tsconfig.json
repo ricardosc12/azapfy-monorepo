@@ -8,7 +8,8 @@
     "paths": {
       "@/*": ["./src/*"],
       "@pub/*": ["./public/*"],
-      "@ui/*": ["../library/ui/src/*"]
+      "@ui/*": ["../library/ui/src/*"],
+      "@design/*": ["../design/src/*"],
     },
     "jsx": "preserve",
     "jsxImportSource": "@emotion/react",

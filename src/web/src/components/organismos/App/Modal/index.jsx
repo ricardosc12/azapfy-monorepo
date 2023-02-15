@@ -4,7 +4,6 @@ import useModalDelete from "./components/modais/padrao"
 import useModalWithoutAsync from "./components/modais/withoutasync"
 import useModalProps from "./components/modais/withprops"
 import useModalPropsOpen from "./components/modais/withpropsonopen"
-import Button from "@ui/atoms/Button"
 import { useState } from 'react'
 
 const Main = styled.div`
@@ -72,7 +71,6 @@ export default function Modal(){
             <button onClick={handleOnOpen}>WITH PROPS ON OPEN</button>
             <button onClick={handleOpenSync}>WITHOUT OPEN ASYNC</button>
             <button onClick={handleKeep}>KEEP MOUNTED</button>
-            <Button/>
         </Main>
     )
 }

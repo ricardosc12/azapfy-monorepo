@@ -1,4 +1,5 @@
 packages:
-  - "src/web"
-  - "configuration/*"
-  - "src/library/*"
+  - "src/web/**"
+  - "configuration/**"
+  - "src/library/**"
+  - "src/design/**"

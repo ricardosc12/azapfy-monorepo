@@ -26,5 +26,9 @@ export const routes = {
     '/app/modal':{
         title: 'Modal',
         name:'azp'
+    },
+    '/app/componentes':{
+        title: "Componentes e Estilos",
+        name: "azp"
     }
 }
