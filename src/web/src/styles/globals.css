@@ -5,6 +5,14 @@
 /* TAILWIND CUSTOM CLASSES */
 @layer components {
 
+    .modal {
+      margin: 10px 20px;
+    }
+
+    .icon-aux > svg {
+      font-size: 20px;
+    }
+
     /* TAILWIND COLOR */
     .color-laranja {color: var(--laranja)}
     .color-laranja_hover {color: var(--laranja_hover)}

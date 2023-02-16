@@ -6,6 +6,9 @@ import useModalProps from "./components/modais/withprops"
 import useModalPropsOpen from "./components/modais/withpropsonopen"
 import { useState } from 'react'
 
+import Button from '@ui/atoms/Button'
+import useModalHeader from '@/components/organismos/App/Modal/components/modais/withheader'
+
 const Main = styled.div`
     cursor: pointer;
     display: flex;
@@ -36,6 +39,8 @@ export default function Modal(){
 
     const modalKeep = useModalKeep({keepMounted:true})
 
+    const modalHeader = useModalHeader({})
+
     const handleDelete = async () => {
         const data = await modalDelete.current.openPromise()
         console.log(data)
@@ -63,6 +68,10 @@ export default function Modal(){
         modalKeep.current.open()
     }
 
+    const handleModalHeader=()=>{
+        modalHeader.current.openPromise()
+    }
+
     return (
         <Main back={state}>
             <div onClick={()=>setState(!state)}>MODAIS</div>
@@ -71,6 +80,8 @@ export default function Modal(){
             <button onClick={handleOnOpen}>WITH PROPS ON OPEN</button>
             <button onClick={handleOpenSync}>WITHOUT OPEN ASYNC</button>
             <button onClick={handleKeep}>KEEP MOUNTED</button>
+
+            <Button onClick={handleModalHeader} className='m-3' color='vermelho'>MODAL WITH HEADER</Button>
         </Main>
     )
 }

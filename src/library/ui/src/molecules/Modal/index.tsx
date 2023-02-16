@@ -1,6 +1,7 @@
 import Dialog, {DialogProps} from '@mui/material/Dialog';
 import { styled } from '@mui/material/styles';
 import { cloneElement, forwardRef, useImperativeHandle, useState, useRef } from 'react';
+import ModalHeader from './header';
 
 const DialogStyled = styled(Dialog)<DialogProps>(({}) => ({
 
@@ -17,7 +18,7 @@ const Modal = forwardRef(function Modal({initial,childRef=false,...props}:any,re
         setOpen(false)
     }).current
 
-    const child:any = useRef(cloneElement(props.children,{callback:callback,close:close}))
+    const child:any = useRef(cloneElement(props.children,{ callback:callback, close:close }))
 
     useImperativeHandle(ref,()=>({
         open(props:any){
@@ -54,3 +55,4 @@ const Modal = forwardRef(function Modal({initial,childRef=false,...props}:any,re
 })
 
 export default Modal
+export { ModalHeader }

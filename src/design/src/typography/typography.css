@@ -2,9 +2,15 @@ h1 {
     font-size: 22px;
 }
 h2 {
+    padding: 0px;
+    margin: 0px;
+    color: var(--text_comum);
+    font-weight: 400;
     font-size: 20px;
 }
 h3 {
+    padding: 0px;
+    margin: 0px;
     font-size: 18px;
 }
 h4 {
