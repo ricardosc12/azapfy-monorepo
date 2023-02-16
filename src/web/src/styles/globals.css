@@ -1,3 +1,61 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* TAILWIND CUSTOM CLASSES */
+@layer components {
+
+    /* TAILWIND COLOR */
+    .color-laranja {color: var(--laranja)}
+    .color-laranja_hover {color: var(--laranja_hover)}
+    .color-laranjinha {color: var(--laranjinha)}
+    .color-borda {color: var(--borda)}
+    .color-fundo_percent {color: var(--fundo_percent)}
+    .color-fundo_system {color: var(--fundo_system)}
+    .color-white {color: var(--white)}
+    .color-text_white {color: var(--text_white)}
+    .color-roxo {color: var(--roxo)}
+    .color-roxo_hover {color: var(--roxo_hover)}
+    .color-roxinho {color: var(--roxinho)}
+    .color-roxinho_hover {color: var(--roxinho_hover)}
+    .color-purpura {color: var(--purpura)}
+    .color-purpurazinho {color: var(--purpurazinho)}
+    .color-gray_scroll {color: var(--gray_scroll)}
+    .color-text_comum {color: var(--text_comum)}
+    .color-text_important {color: var(--text_important)}
+    .color-preto {color: var(--preto)}
+    .color-verde {color: var(--verde)}
+    .color-verde2 {color: var(--verde2)}
+    .color-azul {color: var(--azul)}
+    .color-vermelho {color: var(--vermelho)}
+    .color-vermelho_hover {color: var(--vermelho_hover)}
+    .color-vermelinho {color: var(--vermelinho)}
+    .color-cinzinha {color: var(--cinzinha)}
+
+    /* TAILWIND BACKGROUND */
+    .bg-laranja {background-color: var(--laranja)}
+    .bg-laranja_hover {background-color: var(--laranja_hover)}
+    .bg-laranjinha {background-color: var(--laranjinha)}
+    .bg-borda {background-color: var(--borda)}
+    .bg-fundo_percent {background-color: var(--fundo_percent)}
+    .bg-fundo_system {background-color: var(--fundo_system)}
+    .bg-white {background-color: var(--white)}
+    .bg-text_white {background-color: var(--text_white)}
+    .bg-roxo {background-color: var(--roxo)}
+    .bg-roxo_hover {background-color: var(--roxo_hover)}
+    .bg-roxinho {background-color: var(--roxinho)}
+    .bg-roxinho_hover {background-color: var(--roxinho_hover)}
+    .bg-purpura {background-color: var(--purpura)}
+    .bg-purpurazinho {background-color: var(--purpurazinho)}
+    .bg-gray_scroll {background-color: var(--gray_scroll)}
+    .bg-text_comum {background-color: var(--text_comum)}
+    .bg-text_important {background-color: var(--text_important)}
+    .bg-preto {background-color: var(--preto)}
+    .bg-verde {background-color: var(--verde)}
+    .bg-verde2 {background-color: var(--verde2)}
+    .bg-azul {background-color: var(--azul)}
+    .bg-vermelho {background-color: var(--vermelho)}
+    .bg-vermelho_hover {background-color: var(--vermelho_hover)}
+    .bg-vermelinho {background-color: var(--vermelinho)}
+    .bg-cinzinha {background-color: var(--cinzinha)}
+  }

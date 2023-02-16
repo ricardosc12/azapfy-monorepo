@@ -10,7 +10,7 @@ export default function MyDocument({emotionStyleTags}) {
         <meta name="emotion-insertion-point" content="" />
           {emotionStyleTags}
       </Head>
-      <body className='h-full'>
+      <body className='h-full colors_system'>
         <Main />
         <NextScript />
       </body>

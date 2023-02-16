@@ -15,6 +15,7 @@ module.exports = {
     // Remove Tailwind CSS's preflight style so it can use the MUI's preflight instead (CssBaseline).
     preflight: false,
   },
+  important: true,
   plugins: [
     require('@tailwindcss/aspect-ratio'),
     require('@tailwindcss/forms')

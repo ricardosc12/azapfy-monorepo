@@ -16,5 +16,8 @@
     "src\\web\\node_modules": true,
     "src\\design\\node_modules\\.bin": true,
     "src\\design\\node_modules": true
+  },
+  "editor.quickSuggestions": {
+    "strings": true
   }
 }
