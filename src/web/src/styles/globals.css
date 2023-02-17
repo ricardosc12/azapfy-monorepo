@@ -9,6 +9,10 @@
       margin: 10px 20px;
     }
 
+    .modal-comment {
+      @apply text-base color-text_comment m-0 p-2 px-1 pb-3
+    }
+
     .icon-aux > svg {
       font-size: 20px;
     }
@@ -17,6 +21,7 @@
     .color-laranja {color: var(--laranja)}
     .color-laranja_hover {color: var(--laranja_hover)}
     .color-laranjinha {color: var(--laranjinha)}
+    .color-laranjinha_hover {color: var(--laranjinha_hover)}
     .color-borda {color: var(--borda)}
     .color-fundo_percent {color: var(--fundo_percent)}
     .color-fundo_system {color: var(--fundo_system)}
@@ -30,6 +35,7 @@
     .color-purpurazinho {color: var(--purpurazinho)}
     .color-gray_scroll {color: var(--gray_scroll)}
     .color-text_comum {color: var(--text_comum)}
+    .color-text_comment {color: var(--text_comment)}
     .color-text_important {color: var(--text_important)}
     .color-preto {color: var(--preto)}
     .color-verde {color: var(--verde)}
@@ -44,6 +50,7 @@
     .bg-laranja {background-color: var(--laranja)}
     .bg-laranja_hover {background-color: var(--laranja_hover)}
     .bg-laranjinha {background-color: var(--laranjinha)}
+    .bg-laranjinha_hover {background-color: var(--laranjinha_hover)}
     .bg-borda {background-color: var(--borda)}
     .bg-fundo_percent {background-color: var(--fundo_percent)}
     .bg-fundo_system {background-color: var(--fundo_system)}
@@ -57,6 +64,7 @@
     .bg-purpurazinho {background-color: var(--purpurazinho)}
     .bg-gray_scroll {background-color: var(--gray_scroll)}
     .bg-text_comum {background-color: var(--text_comum)}
+    .bg-text_comment {color: var(--text_comment)}
     .bg-text_important {background-color: var(--text_important)}
     .bg-preto {background-color: var(--preto)}
     .bg-verde {background-color: var(--verde)}

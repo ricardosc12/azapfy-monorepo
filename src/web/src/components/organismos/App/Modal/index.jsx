@@ -68,8 +68,9 @@ export default function Modal(){
         modalKeep.current.open()
     }
 
-    const handleModalHeader=()=>{
-        modalHeader.current.openPromise()
+    const handleModalHeader=async()=>{
+        const data = await modalHeader.current.openPromise()
+        if(data=="EXCLUIR") console.log("EXCLUINDO...")
     }
 
     return (

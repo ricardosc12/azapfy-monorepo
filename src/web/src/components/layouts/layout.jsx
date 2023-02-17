@@ -160,12 +160,14 @@ const Navbar = React.memo(() => {
     )
 })
 
+import Button from '@ui/atoms/Button'
+
 Navbar.displayName = 'Navbar';
 
 export default function Layout({children}) {
 
     return (
-        <main>
+        <main id='main_app'>
             <Navbar/>
             <div className='p-5'>
                 {children}

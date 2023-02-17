@@ -22,6 +22,10 @@ const theme = createTheme({
           main: COLORS_SYSTEM.vermelho,
           contrastText: COLORS_SYSTEM.text_white
         },
+        laranjinha: {
+          main: COLORS_SYSTEM.laranjinha,
+          contrastText: COLORS_SYSTEM.laranja
+        },
         tonalOffset: 0.03,
         contrastThreshold: 4.5
     },
@@ -53,8 +57,15 @@ const theme = createTheme({
                     backgroundColor: COLORS_SYSTEM.roxo_hover,
                   }
                 }),
+                ...(ownerState.variant === 'contained' &&
+                ownerState.color === 'laranjinha' && {
+                  ":hover": {
+                    backgroundColor: COLORS_SYSTEM.laranjinha_hover,
+                  }
+                }),
                 boxShadow: 'none',
                 borderRadius:'30px',
+                height:'36px',
             }),
           },
         },

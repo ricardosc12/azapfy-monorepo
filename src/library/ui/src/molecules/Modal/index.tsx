@@ -2,6 +2,8 @@ import Dialog, {DialogProps} from '@mui/material/Dialog';
 import { styled } from '@mui/material/styles';
 import { cloneElement, forwardRef, useImperativeHandle, useState, useRef } from 'react';
 import ModalHeader from './header';
+import {  theme } from '../../theme/mui-theme'
+import { ThemeProvider } from '@mui/material/styles';
 
 const DialogStyled = styled(Dialog)<DialogProps>(({}) => ({
 
@@ -49,7 +51,9 @@ const Modal = forwardRef(function Modal({initial,childRef=false,...props}:any,re
 
     return (
         <DialogStyled open={open} maxWidth={false} onClose={close} {...props}>
-            {child.current}
+            <ThemeProvider theme={theme}>
+                {child.current}
+            </ThemeProvider>
         </DialogStyled>
     )
 })

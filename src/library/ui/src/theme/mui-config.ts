@@ -6,6 +6,7 @@ declare module '@mui/material/styles' {
         roxinho?: Palette['primary'];
         vermelho?: Palette['primary'];
         roxo?: Palette['primary'];
+        laranjinha?: Palette['primary'];
         
     }
     interface PaletteColor {
@@ -13,6 +14,7 @@ declare module '@mui/material/styles' {
         roxinho?: PaletteColor['main'];
         vermelho?: PaletteColor['main'];
         roxo?: PaletteColor['main'];
+        laranjinha?: PaletteColor['main'];
         
     }
     interface PaletteOptions {
@@ -20,6 +22,7 @@ declare module '@mui/material/styles' {
         roxinho?: PaletteOptions['primary'];
         vermelho?: PaletteOptions['primary'];
         roxo?: PaletteOptions['primary'];
+        laranjinha?: PaletteOptions['primary'];
     }
 }
 
@@ -29,6 +32,7 @@ declare module '@mui/material/Button' {
         roxinho: true;
         vermelho: true;
         roxo: true;
+        laranjinha: true;
     }
 }
 declare module '@mui/material/Checkbox' {
@@ -37,5 +41,6 @@ declare module '@mui/material/Checkbox' {
         roxinho: true;
         vermelho: true;
         roxo: true;
+        laranjinha: true;
     }
 }
