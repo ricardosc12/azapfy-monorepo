@@ -16,7 +16,8 @@
     "src\\web\\node_modules": true,
     "src\\design\\node_modules\\.bin": true,
     "src\\design\\node_modules": true,
-    "src\\design\\.turbo": true
+    "src\\design\\.turbo": true,
+    "turbo.json": true
   },
   "editor.quickSuggestions": {
     "strings": true

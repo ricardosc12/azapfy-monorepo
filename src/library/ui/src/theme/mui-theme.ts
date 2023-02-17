@@ -66,6 +66,7 @@ const theme = createTheme({
                 boxShadow: 'none',
                 borderRadius:'30px',
                 height:'36px',
+                paddingBottom:'5px'
             }),
           },
         },
