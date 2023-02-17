@@ -3,6 +3,7 @@
     background-color: var(--purpura);
     color: white;
     box-shadow: 0px 5px 10px rgba(0,0,0,.1) !important;
+    font-weight: bold;
 }
 .css_native:hover {
     background-color: #bcb6c9;

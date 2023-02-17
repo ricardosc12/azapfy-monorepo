@@ -30,6 +30,7 @@ const CustomDiv = styled.div`
     &:hover {
         background-color: #5799db;
     }
+    font-weight: bold;
 `
 
 export default function Componentes(){
@@ -43,15 +44,22 @@ export default function Componentes(){
             <Button className='m-1' onClick={()=>setActive('var(--laranjinha)')}>LARANJA</Button>
             <Button className='m-1' color='vermelho' onClick={()=>setActive('var(--vermelinho)')}>VERMELHO</Button>
             <Button className='m-1' color='roxo' onClick={()=>setActive('var(--roxinho)')}>ROXO</Button>
-            <div className='bg-laranja text-white cursor-pointer shadow-lg hover:bg-laranja_hover'>TAILWINDCSS</div>
+
+
+
+            <div className='bg-laranja text-white cursor-pointer shadow-lg hover:bg-laranja_hover font-bold'>TAILWINDCSS</div>
+
             <CustomDiv>EMOTIONCSS</CustomDiv>
+
             <div className={style.css_native}>PURE CSS</div>
+
             <div className='space-x-10'>
                 <h1>H1</h1>
                 <h2>H2</h2>
                 <h3>H3</h3>
                 <h4>H4</h4>
             </div>
+
         </Main>
     )
 }
