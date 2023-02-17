@@ -58,6 +58,7 @@ export default function Dash(){
 
     return (
         <div>
+            <h1>DASHBOARD MAIN</h1>
             {/* <button onClick={()=>auth.update()}>Auth</button> */}
             {/* <div><p><b>{`${nome} ${idade}`}</b></p></div> */}
             <button onClick={handleDelete}>MODAL</button>

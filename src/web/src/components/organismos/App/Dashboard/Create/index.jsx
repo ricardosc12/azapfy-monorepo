@@ -10,7 +10,7 @@ export default function CreateDashboard(){
     useCreateDashStore(dispatch)
 
     return <div>
-        Create Dashboard
+        <h1>CREATE DASHBOARD</h1>
         {/* <div><p><b>{`${nome} ${idade}`}</b></p></div>
         <div className="mt-10">
             <div className="mb-5">
