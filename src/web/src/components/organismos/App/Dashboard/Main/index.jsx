@@ -40,15 +40,15 @@ const ModalTeste=({callback,data,...props})=>{
 
 export default function Dash(){
 
-    // const { dispatch } = useDashStore(state=>state.change)
+    const { dispatch } = useDashStore(state=>state.change)
 
-    const { motoristas, usuarios } = useDashStore(state=>state.dados.main)
+    const { motoristas } = useDashStore(state=>state.dados.main)
 
     const [update,setUpdate] = useState(false)
 
     const refModal = useModal({content:<ModalTeste/>,propsModal:{keepMounted:true}})
 
-    // useCreateDashStore(dispatch)
+    useCreateDashStore(dispatch)
 
     async function handleDelete(){
         const data = await refModal.current.openPromise()

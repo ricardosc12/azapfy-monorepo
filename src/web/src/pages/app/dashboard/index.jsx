@@ -9,7 +9,7 @@ const Dashboard =  dynamic(() => import('@/components/organismos/App/Dashboard/M
 export default function Page() {
     return (
         <Suspense fallback={<div>Loading...</div>}>
-            <Dashboard/>
+            <Framer><Dashboard/></Framer>
         </Suspense>
     )
 }

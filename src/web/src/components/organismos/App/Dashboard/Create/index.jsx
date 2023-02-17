@@ -1,11 +1,13 @@
-import { useDashStore } from "../storage"
+import { useCreateDashStore, useDashStore } from "../storage"
+import { InfoMot } from "@/components/organismos/App/Dashboard/Main"
 
 export default function CreateDashboard(){
 
-    const dispatch  = useDashStore(state=>state.dispatch)
-    const {nome,idade} = useDashStore(state=>state.dados.create)
+    const { dispatch } = useDashStore(state=>state.change)
+    const motoristas = useDashStore(state=>state.dados.main.motoristas)
 
-    console.log('render')
+
+    useCreateDashStore(dispatch)
 
     return <div>
         Create Dashboard
@@ -21,9 +23,7 @@ export default function CreateDashboard(){
             </div>
         </div> */}
 
-        <div>
-            {[...Array(100)].map((_,index)=><button className="m-1 bg-slate-700 p-2 rounded text-white hover:bg-blue-600" key={`bt-${index}`}>CONFIRMAR</button>)}
-        </div>
+        <InfoMot dados={motoristas} load={!motoristas || !motoristas.length}/>
 
     </div>
 }

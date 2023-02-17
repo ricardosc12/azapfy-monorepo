@@ -34,5 +34,5 @@ export const useDashStore = create(immer(set=>({
 
 export const useCreateDashStore=(dispatch)=>{
     useMotoristas(motoristaStoragePros(dispatch.setMotoristas))
-    useUsuarios(usuariosStoragePros(dispatch.setUsuarios))
+    // useUsuarios(usuariosStoragePros(dispatch.setUsuarios))
 }
