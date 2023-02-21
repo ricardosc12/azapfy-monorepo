@@ -1,7 +1,7 @@
 import { create } from 'zustand'
 import { immer } from "zustand/middleware/immer";
 import { useMotoristas, motoristaStoragePros } from "@/components/hooks/motoristas"
-import { useUsuarios, usuariosStoragePros } from '@/components/hooks/usuarios';
+// import { useUsuarios, usuariosStoragePros } from '@/components/hooks/usuarios';
 
 export const useDashStore = create(immer(set=>({
     dados:{

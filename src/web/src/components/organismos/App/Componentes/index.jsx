@@ -45,8 +45,6 @@ export default function Componentes(){
             <Button className='m-1' color='vermelho' onClick={()=>setActive('var(--vermelinho)')}>VERMELHO</Button>
             <Button className='m-1' color='roxo' onClick={()=>setActive('var(--roxinho)')}>ROXO</Button>
 
-
-
             <div className='bg-laranja text-white cursor-pointer shadow-lg hover:bg-laranja_hover font-bold'>TAILWINDCSS</div>
 
             <CustomDiv>EMOTIONCSS</CustomDiv>
