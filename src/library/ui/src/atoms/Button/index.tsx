@@ -1,6 +1,6 @@
-import styled from '@emotion/styled'
-import { Button as ButtonMui, ButtonProps } from "@mui/material"
-import { Checkbox } from '@mui/material'
+import styled from "@emotion/styled";
+import { Button as ButtonMui, ButtonProps } from "@mui/material";
+import { Checkbox } from "@mui/material";
 
 // const Bt = styled(ButtonMUI)`
 //     &.MuiButton-root {
@@ -9,11 +9,15 @@ import { Checkbox } from '@mui/material'
 //     }
 // `
 
-export default function Button({children,...props}:ButtonProps) {
-
+export default function Button({ children, ...props }: ButtonProps) {
     return (
-        <ButtonMui disableElevation color="primary" variant="contained" {...props}>
+        <ButtonMui
+            disableElevation
+            color="primary"
+            variant="contained"
+            {...props}
+        >
             {children}
         </ButtonMui>
-    )
-}   
+    );
+}

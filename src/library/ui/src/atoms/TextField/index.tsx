@@ -1,3 +1,3 @@
-export default function TextField(){
-    return <input type="text" />
+export default function TextField() {
+    return <input type="text" />;
 }

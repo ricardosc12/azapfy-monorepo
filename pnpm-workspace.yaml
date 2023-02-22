@@ -3,3 +3,4 @@ packages:
   - "configuration/**"
   - "src/library/**"
   - "src/design/**"
+  - "src/storybook/**"

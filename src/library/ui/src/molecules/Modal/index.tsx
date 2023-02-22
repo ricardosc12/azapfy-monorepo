@@ -1,62 +1,66 @@
-import Dialog, {DialogProps} from '@mui/material/Dialog';
-import { styled } from '@mui/material/styles';
-import { cloneElement, forwardRef, useImperativeHandle, useState, useRef } from 'react';
-import ModalHeader from './header';
-import {  theme } from '../../theme/mui-theme'
-import { ThemeProvider } from '@mui/material/styles';
+import Dialog, { DialogProps } from "@mui/material/Dialog";
+import { styled } from "@mui/material/styles";
+import {
+    cloneElement,
+    forwardRef,
+    useImperativeHandle,
+    useState,
+    useRef,
+} from "react";
+import ModalHeader from "./header";
+import { theme } from "../../theme/mui-theme";
+import { ThemeProvider } from "@mui/material/styles";
 
-const DialogStyled = styled(Dialog)<DialogProps>(({}) => ({
+const DialogStyled = styled(Dialog)<DialogProps>(({}) => ({}));
 
-}))
+const Modal = forwardRef(function Modal(
+    { initial, childRef = false, ...props }: any,
+    ref
+) {
+    const [open, setOpen] = useState(initial);
 
-const Modal = forwardRef(function Modal({initial,childRef=false,...props}:any,ref){
+    const callback: any = useRef(null);
 
-    const [open, setOpen] = useState(initial)
+    const close = useRef(() => {
+        callback.current?.(undefined);
+        setOpen(false);
+    }).current;
 
-    const callback:any = useRef(null)
+    const child: any = useRef(
+        cloneElement(props.children, { callback: callback, close: close })
+    );
 
-    const close=useRef(()=>{
-        callback.current?.(undefined)
-        setOpen(false)
-    }).current
-
-    const child:any = useRef(cloneElement(props.children,{ callback:callback, close:close }))
-
-    useImperativeHandle(ref,()=>({
-        open(props:any){
-            if(props){
-                child.current = cloneElement(child.current,props)
+    useImperativeHandle(ref, () => ({
+        open(props: any) {
+            if (props) {
+                child.current = cloneElement(child.current, props);
             }
-            setOpen(true)
+            setOpen(true);
         },
-        callback(resolve:any,data:any){
-            resolve(data)
-            setOpen(false)
+        callback(resolve: any, data: any) {
+            resolve(data);
+            setOpen(false);
         },
-        openPromise(props:any){
-            if(props){
-                child.current = cloneElement(child.current,props)
+        openPromise(props: any) {
+            if (props) {
+                child.current = cloneElement(child.current, props);
             }
-            return new Promise(resolve=>{
-                callback.current = (data:any)=>this.callback(resolve,data)
-                setOpen(true)
-            })
+            return new Promise((resolve) => {
+                callback.current = (data: any) => this.callback(resolve, data);
+                setOpen(true);
+            });
         },
-        close(){
-            setOpen(false)
+        close() {
+            setOpen(false);
         },
-    }))
-
-
+    }));
 
     return (
         <DialogStyled open={open} maxWidth={false} onClose={close} {...props}>
-            <ThemeProvider theme={theme}>
-                {child.current}
-            </ThemeProvider>
+            <ThemeProvider theme={theme}>{child.current}</ThemeProvider>
         </DialogStyled>
-    )
-})
+    );
+});
 
-export default Modal
-export { ModalHeader }
+export default Modal;
+export { ModalHeader };

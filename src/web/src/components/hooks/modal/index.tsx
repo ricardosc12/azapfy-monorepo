@@ -4,7 +4,7 @@ import Modal from "@ui/molecules/Modal";
 
 export function useModal({content, initial=false, propsModal}:any){
 
-    const refModal = useRef(null)
+    const refModal = useRef(null);
 
     useEffect(()=>{
         // const _main = document.getElementById("__next")

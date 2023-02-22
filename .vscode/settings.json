@@ -9,15 +9,15 @@
     "src\\web\\README.md": true,
     "src\\web\\next-env.d.ts": true,
     "src\\web\\postcss.config.js": true,
-    ".gitignore": true,
     "src\\web\\.eslintrc.js": true,
     "src\\library\\ui\\.turbo": true,
-    "pnpm-lock.yaml": true,
     "src\\web\\node_modules": true,
     "src\\design\\node_modules\\.bin": true,
     "src\\design\\node_modules": true,
     "src\\design\\.turbo": true,
-    "turbo.json": true
+    "turbo.json": true,
+    ".gitignore": true,
+    "src\\storybook\\node_modules": true
   },
   "editor.quickSuggestions": {
     "strings": true
