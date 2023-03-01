@@ -30,5 +30,9 @@ export const routes = {
     '/app/componentes':{
         title: "Componentes e Estilos",
         name: "azp"
+    },
+    '/app/select':{
+        title: "Select",
+        name: "azp"
     }
 }

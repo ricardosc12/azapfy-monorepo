@@ -14,6 +14,7 @@ const COLORS_SYSTEM = {
     roxinho:"#DFD3E3",
     roxinho_hover:"#E8E0EB",
     purpura:"#998EAC",
+    purpura_hover: "#998EACBF",
     purpurazinho:"#EBE8EE",
     gray_scroll:"#B2B2B2",
     text_comum:"#707070",
@@ -26,7 +27,11 @@ const COLORS_SYSTEM = {
     vermelho:"#E53935",
     vermelho_hover:"#EB6B68",
     vermelinho:"#FAD7D7",
+    vermelinho_hover:"#FAD7D7BF",
+    cinza: "#707070",
+    cinza_hover: "#707070BF",
     cinzinha:"#F6F6F6",
+    cinzinha_hover: "#F6F6F6BF"
     //
 }
 

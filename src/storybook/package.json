@@ -6,19 +6,21 @@
   "types": "./src/main.tsx",
   "scripts": {
     "lint": "eslint **/*.ts **/*.tsx",
-    "dev": "vite",
-    "build": "tsc && vite build",
     "preview": "vite preview",
     "storybook": "set NODE_OPTIONS=--openssl-legacy-provider && storybook dev -p 6006",
     "build-storybook": "set NODE_OPTIONS=--openssl-legacy-provider && storybook build"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^6.3.0",
+    "@fortawesome/free-solid-svg-icons": "^6.3.0",
+    "@fortawesome/react-fontawesome": "^0.2.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "ui": "workspace:*"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
+    "@mui/material": "^5.11.8",
     "@storybook/addon-actions": "^7.0.0-beta.53",
     "@storybook/addon-essentials": "^7.0.0-beta.53",
     "@storybook/addon-interactions": "^7.0.0-beta.53",
@@ -35,7 +37,6 @@
     "storybook": "7.0.0-beta.53",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.3",
-    "vite": "^4.1.0",
-    "@mui/material": "^5.11.8"
+    "vite": "^4.1.0"
   }
 }

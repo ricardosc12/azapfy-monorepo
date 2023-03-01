@@ -17,7 +17,10 @@
     "src\\design\\.turbo": true,
     "turbo.json": true,
     ".gitignore": true,
-    "src\\storybook\\node_modules": true
+    "src\\storybook\\node_modules": true,
+    "src\\library\\ui\\node_modules": true,
+    "src\\library\\ui\\.prettierignore": true,
+    "src\\library\\ui\\.prettierrc.json": true
   },
   "editor.quickSuggestions": {
     "strings": true

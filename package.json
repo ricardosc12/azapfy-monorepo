@@ -16,7 +16,7 @@
     "web": "pnpm --filter web",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
     "prod": "turbo run build & pnpm --filter web start",
-    "story": "npm run storybook --filter story"
+    "story": "npm run --workspace src/storybook storybook"
   },
   "devDependencies": {
     "eslint-config-custom": "workspace:*",

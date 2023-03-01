@@ -14,7 +14,9 @@
         "@fortawesome/free-solid-svg-icons": "^6.3.0",
         "@fortawesome/react-fontawesome": "^0.2.0",
         "@mui/icons-material": "^5.11.9",
-        "design": "workspace:*"
+        "design": "workspace:*",
+        "react-virtualized": "^9.22.3",
+        "react-windowed-select": "^5.1.0"
     },
     "devDependencies": {
         "@emotion/react": "latest",

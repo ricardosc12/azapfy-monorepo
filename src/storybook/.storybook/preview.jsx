@@ -1,4 +1,4 @@
-import { ThemeProvider } from '@mui/material/styles';
+import { ThemeProvider, StyledEngineProvider } from '@mui/material/styles';
 import { theme } from "@ui/index";
 
 export const parameters = {
@@ -11,10 +11,23 @@ export const parameters = {
  	},
 }
 
+const css = {
+	justifyContent: 'center',
+	width: '100%',
+	height: 'calc(100vh - 35px)',
+	display: 'flex',
+	alignItems: 'center'
+}
+
 export const withMuiTheme = (Story, context) => (
-	<ThemeProvider theme={theme}>
-		<Story {...context} />
-	</ThemeProvider>
+	<StyledEngineProvider injectFirst>
+		<ThemeProvider theme={theme}>
+			<div id='main' style={css}>
+				<Story {...context} />
+			</div>
+		</ThemeProvider>
+	</StyledEngineProvider>
+
 );
 
 export const decorators = [withMuiTheme];

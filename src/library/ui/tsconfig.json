@@ -24,6 +24,6 @@
         "**/*.tsx",
         "**/*.js",
         "**/*.jsx"
-    ],
+, "src/atoms/Select/component.tx"    ],
     "exclude": ["dist", "build", "node_modules"]
 }
