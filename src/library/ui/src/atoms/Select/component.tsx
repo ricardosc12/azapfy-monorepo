@@ -333,7 +333,7 @@ const Dropdown=({
                     }
                 </div>
                 <div className={styles.containerInput}>
-                    <input name="filter-input" disabled={disabled} ref={refInput} onInput={onKeydown} className={styles.input} type="text" autocomplete="off"/>
+                    <input name="filter-input" disabled={disabled} ref={refInput} onInput={onKeydown} className={styles.input} type="text" autoComplete="off"/>
                 </div>
                 <div className={styles.arrow}>{iconArrow()}</div>
                 {(!multi&&value&&(custom?.isClearable!==false))&&<div className={styles.iconClose} onClick={removeItem}>{iconClose()}</div>}

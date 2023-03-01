@@ -6,7 +6,7 @@ const WSelect:any = WindowedSelect
 
 const options:any = [];
 
-for (let i = 0; i < 1000; i += 1) {
+for (let i = 0; i < 100000; i += 1) {
   options.push({
     label: `teste ${i}`,
     value: i
