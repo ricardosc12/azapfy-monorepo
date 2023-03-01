@@ -1,3 +1,5 @@
+//@ts-nocheck
+
 import {useRef, useEffect, useState, useCallback} from 'react'
 import styles from './css.module.css'
 import {List, AutoSizer} from 'react-virtualized'
@@ -43,22 +45,22 @@ const Dropdown=({
 
     if(show===false) return <></>
 
-    const ref = useRef(null)
-    const refInput = useRef(null)
-    const refModal = useRef(null)
-    const refModal_ = useRef(false)
+    const ref:any = useRef(null)
+    const refInput:any = useRef(null)
+    const refModal:any = useRef(null)
+    const refModal_:any = useRef(false)
 
     const width_ = useRef(parseInt(maxWidth.replace('px',''))-20+'px').current
     const index_ = useRef(false);
 
-    const state = useRef({filter:'',display:false})
+    const state:any = useRef({filter:'',display:false})
 
-    const [update, updateState] = useState();
+    const [update, updateState] = useState<any>();
     const forceUpdate = useCallback(() => updateState({}), []);
 
     const handleFilter = useDebounce(handlerSetFilter,60)
 
-    function handlerSetFilter(e){
+    function handlerSetFilter(e:any){
         if(!noSelectData.current.length) return
         updateList(e)
         // try{ref.current.querySelector(`#item-${countKey}`).className = ''}
@@ -68,11 +70,11 @@ const Dropdown=({
         setFilter(e)
     }
 
-    const selected = useRef(multi?[]:'')
-    const noSelectData = useRef([])
+    const selected:any = useRef(multi?[]:'')
+    const noSelectData:any = useRef([])
     
 
-    function handleChange(e){
+    function handleChange(e:any){
         onChange(e)
         onchange&&onchange(e)
     }
@@ -211,7 +213,7 @@ const Dropdown=({
     const listFilted = useRef([])
 
 
-    function updateList(value){
+    function updateList(value:any){
         let filter = (value||value==='')?value:state.current.filter
         listFilted.current = noSelectData.current.filter(item=>item.label.toString().toLowerCase().includes(filter.toLowerCase()) ||item.value.toString().toLowerCase().includes(filter.toLowerCase()) )
         if(ref.current && state.current.display) {
@@ -257,9 +259,9 @@ const Dropdown=({
         }
 
         setTimeout(() => {
-            let heightList = listFilted.current.length?listFilted.current.length*30:0
-            let height = heightList<245?heightList:245
-            let list = ref.current.querySelector('#list-container')
+            let heightList:any = listFilted.current.length?listFilted.current.length*30:0
+            let height:any = heightList<245?heightList:245
+            let list:any = ref.current.querySelector('#list-container')
             list && (list.style.height = `${height}px`)
         });
     }

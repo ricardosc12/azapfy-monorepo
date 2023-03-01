@@ -56,6 +56,7 @@ importers:
       '@mui/material': ^5.11.8
       '@types/react': ^18.0.17
       '@types/react-dom': ^18.0.6
+      '@types/react-virtualized': ^9.21.21
       design: workspace:*
       eslint: ^7.32.0
       eslint-config-custom: workspace:*
@@ -80,6 +81,7 @@ importers:
       '@mui/material': 5.11.11_d2lgyfpecxdc2bsiwyag5wf7ti
       '@types/react': 18.0.28
       '@types/react-dom': 18.0.11
+      '@types/react-virtualized': 9.21.21
       eslint: 7.32.0
       eslint-config-custom: link:../../../configuration/eslint-config-custom
       prettier: 2.8.4
@@ -3823,11 +3825,26 @@ packages:
     dependencies:
       '@types/react': 18.0.28
 
+  /@types/react-virtualized/9.21.21:
+    resolution: {integrity: sha512-Exx6I7p4Qn+BBA1SRyj/UwQlZ0I0Pq7g7uhAp0QQ4JWzZunqEqNBGTmCmMmS/3N9wFgAGWuBD16ap7k8Y14VPA==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/react': 17.0.53
+    dev: true
+
   /@types/react-window/1.8.5:
     resolution: {integrity: sha512-V9q3CvhC9Jk9bWBOysPGaWy/Z0lxYcTXLtLipkt2cnRj1JOSFNF7wqGpkScSXMgBwC+fnVRg/7shwgddBG5ICw==}
     dependencies:
       '@types/react': 18.0.28
     dev: false
+
+  /@types/react/17.0.53:
+    resolution: {integrity: sha512-1yIpQR2zdYu1Z/dc1OxC+MA6GR240u3gcnP4l6mvj/PJiVaqHsQPmWttsvHsfnhfPbU2FuGmo0wSITPygjBmsw==}
+    dependencies:
+      '@types/prop-types': 15.7.5
+      '@types/scheduler': 0.16.2
+      csstype: 3.1.1
+    dev: true
 
   /@types/react/18.0.28:
     resolution: {integrity: sha512-RD0ivG1kEztNBdoAK7lekI9M+azSnitIn85h4iOiaLjaTrMjzslhaqCGaI4IyCJ1RljWiLCEu4jyrLLgqxBTew==}
