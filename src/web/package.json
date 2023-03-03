@@ -5,9 +5,9 @@
   "scripts": {
     "dev": "start http://localhost:5000 && next dev -p 5000",
     "build": "next build",
-    "start": "next start",
+    "start": "next start -p 5000",
     "lint": "next lint",
-    "prod": "next build & next start"
+    "prod": "next build & next start -p 5000"
   },
   "dependencies": {
     "@emotion/cache": "latest",
