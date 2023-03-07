@@ -1,5 +1,6 @@
 import styled from "@emotion/styled"
 import Select from "@ui/atoms/Select"
+import { useLayoutEffect, useRef } from "react"
 
 const Main=styled.div`
     display: flex;
@@ -11,6 +12,7 @@ const Main=styled.div`
 `
 
 export default function SelectPage(){
+
     return (
         <Main>
             <Select/>

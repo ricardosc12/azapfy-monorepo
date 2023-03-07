@@ -35,4 +35,9 @@ export const routes = {
         title: "Select",
         name: "azp"
     }
+    ,
+    '/app/form':{
+        title: "Form",
+        name: "azp"
+    }
 }
